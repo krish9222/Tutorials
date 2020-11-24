@@ -5,13 +5,14 @@ public class StackAllZerosToExtremeEnds {
 	static int[] arr = {1, 2, 0, 4, 3, 0, 5, 0};
 	
 	public static void main(String[] args) {
+//		stackTowardsFarRightWithoutNewArray();
+//		stackTowardsFarLeftWithoutNewArray();
 		
-		stackTowardsFarRight();
-		stackTowardsFarLeft();
-		
+//		stackTowardsFarRightWithNewArray();
+//		stackTowardsFarLeftWithNewArray();
 	}
 	
-	static void stackTowardsFarRight() {
+	static void stackTowardsFarRightWithoutNewArray() {
 		int count = 0;
 		
 		for (int i = 0; i < arr.length; i++) {
@@ -35,7 +36,29 @@ public class StackAllZerosToExtremeEnds {
 		printArr();
 	}
 	
-	static void stackTowardsFarLeft() {
+	static void stackTowardsFarRightWithNewArray() {
+		
+		int[] newArr = new int[arr.length];
+		
+		int j = 0;
+		
+		for (int i=0; i < arr.length-1; i++) {
+			
+			if (arr[i] != 0) {
+				
+				newArr[j++] = arr[i];
+				
+			}
+		}
+		
+		
+		// Print array
+		for (int i : newArr) {
+			System.out.println(i);
+		}
+	}
+	
+	static void stackTowardsFarLeftWithoutNewArray() {
 		
 		int count = arr.length -1 ;
 		
@@ -58,9 +81,34 @@ public class StackAllZerosToExtremeEnds {
 		printArr();
 	}
 	
+	static void stackTowardsFarLeftWithNewArray() {
+		
+		int[] newArr = new int[arr.length];
+		
+		int j = arr.length-1;
+		
+		for (int i=arr.length-1; i >= 0; i--) {
+			
+			if (arr[i] != 0) {
+				
+				newArr[j--] = arr[i];
+				
+			}
+		}
+		
+		// Print array
+		for (int i : newArr) {
+			System.out.println(i);
+		}
+		
+	}
+	
 	static void printArr() {
+		
 		for (int in : arr) {
-			System.out.println(in);	
+			
+			System.out.println(in);
+			
 		}
 	}
 
