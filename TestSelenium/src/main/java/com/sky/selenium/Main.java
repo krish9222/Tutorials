@@ -17,7 +17,7 @@ public class Main {
 		
 		Thread.sleep(3000);
 		
-		String hompageH1Text = driver.findElement(By.cssSelector(".hero.homepage")).getText();
+		String hompageH1Text = driver.findElement(By.cssSelector("main section h1")).getText();
 		
 		Asserts.check(hompageH1Text.contains("Selenium automates browsers. That's it!"), "H1 text is incorrect!!");
 		
